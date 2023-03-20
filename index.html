@@ -13,28 +13,19 @@
     />
     <link rel="stylesheet" href="./style/main.css" />
     <title>Frontend Mentor | Results summary component</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <section class="card">
       <div class="container">
         <div class="result">
-          <h1 class="result__title">Your Result</h1>
-          <div class="result__value">
-            <h2 class="result__value__current">76</h2>
-            <p class="result__value__initial">of 100</p>
+          <h1 class="result__title flex-header">Your Result</h1>
+          <div class="flex-main">
+            <div class="result__value">
+              <h2 class="result__value__current">76</h2>
+              <p class="result__value__initial">of 100</p>
+            </div>
           </div>
-          <div class="result__total">
+          <div class="result__total flex-footer">
             <h2 class="result__total__quality">Great</h2>
             <p class="result__total__level">
               You scored higher than 65% of the people who have taken these
@@ -43,53 +34,59 @@
           </div>
         </div>
         <div class="summary">
-          <h2 class="summary__title">Summary</h2>
-          <ul class="summary__list">
+          <h2 class="summary__title flex-header">Summary</h2>
+          <ul class="summary__list flex-main">
             <li class="summary__item">
               <div class="item__left">
-                <img class="item__icon" />
-                <h3 class="item__title">Reaction</h3>
+                <!-- <img class="item__icon" /> -->
+                <h3 class="summary__sub-title">Reaction</h3>
               </div>
               <div class="item__right">
-                <span class="text-bold">80</span><span>/ 100</span>
+                <span class="text-bold">80 </span><span>/ 100</span>
               </div>
             </li>
             <li class="summary__item">
               <div class="item__left">
-                <img class="item__icon" />
-                <h3 class="item__title">Memory</h3>
+                <!-- <img class="item__icon" /> -->
+                <h3 class="summary__sub-title">Memory</h3>
               </div>
               <div class="item__right">
-                <span class="text-bold">92</span><span>/ 100</span>
+                <span class="text-bold">92 </span><span>/ 100</span>
               </div>
             </li>
             <li class="summary__item">
               <div class="item__left">
-                <img class="item__icon" />
-                <h3 class="item__title">Verbal</h3>
+                <!-- <img class="item__icon" /> -->
+                <h3 class="summary__sub-title">Verbal</h3>
               </div>
               <div class="item__right">
-                <span class="text-bold">61</span><span>/ 100</span>
+                <span class="text-bold">61 </span><span>/ 100</span>
               </div>
             </li>
             <li class="summary__item">
               <div class="item__left">
-                <img class="item__icon" />
-                <h3 class="item__title">Visual</h3>
+                <!-- <img class="item__icon" /> -->
+                <h3 class="summary__sub-title">Visual</h3>
               </div>
               <div class="item__right">
-                <span class="text-bold">72</span><span>/ 100</span>
+                <span class="text-bold">72 </span><span>/ 100</span>
               </div>
             </li>
           </ul>
-          <button class="summary__bttn">Continue</button>
+          <button class="summary__bttn flex-footer">
+            <div class="summary__bttn-hover"></div>
+            <div class="summary__bttn-title">Continue</div>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/AndriiPichkorkiy">Andrii Pichkorkiy</a>.
+    </div>
   </body>
 </html>

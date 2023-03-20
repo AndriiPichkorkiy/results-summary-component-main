@@ -4,6 +4,7 @@
 }
 * {
   box-sizing: border-box;
+  transition-duration: 250ms;
 }
 
 h1,
@@ -24,18 +25,41 @@ li {
   list-style: none;
 }
 
+html {
+  font-size: 18px;
+  height: 100%;
+}
+
 body {
   font-family: "Hanken Grotesk";
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+@media (min-width: 1280px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .container {
   max-width: 375px;
   margin: 0 auto;
 }
+@media (min-width: 1280px) {
+  .container {
+    max-width: 730px;
+    display: flex;
+    flex-direction: row;
+    min-height: 512px;
+  }
+}
 
 .result {
   background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-  color: hsl(241, 100%, 89%);
+  color: hsl(221, 100%, 96%);
   padding: 30px 60px 40px;
   border-bottom-right-radius: 32px;
   border-bottom-left-radius: 32px;
@@ -43,16 +67,20 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
+@media (min-width: 1280px) {
+  .result {
+    flex: 1 1 100%;
+    border-radius: 32px;
+    padding: 40px 60px 55px;
+  }
+}
 .result__title {
-  font-size: 18px;
   font-weight: 700;
 }
-
 .result__value {
   width: 140px;
   height: 140px;
-  margin-top: 1rem;
+  max-height: 140px;
   background: linear-gradient(hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
   padding: 16px;
   border-radius: 90%;
@@ -67,44 +95,146 @@ body {
   color: hsl(0, 0%, 100%);
 }
 .result__value__initial {
-  font-size: 18px;
   font-weight: 500;
 }
-
 .result__total {
   margin-top: 2rem;
   text-align: center;
 }
 .result__total__quality {
-  font-size: 20px;
   font-weight: 800;
   color: hsl(0, 0%, 100%);
 }
 .result__total__level {
   margin-top: 1rem;
-  font-size: 16px;
   font-weight: 500;
 }
 
 .summary {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 40px;
 }
-
+@media (min-width: 1280px) {
+  .summary {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px 55px;
+  }
+}
 .summary__title {
-  font-size: 18px;
+  color: hsl(234, 85%, 45%);
   font-weight: 700;
 }
-
+.summary__sub-title {
+  font-weight: 500;
+}
 .summary__item {
   display: flex;
   justify-content: space-between;
   padding: 8px;
   background-color: grey;
-  border-radius: 16px;
+  border-radius: 8px;
+}
+.summary__item:not(:first-child) {
   margin-top: 1rem;
 }
+.summary__item:nth-child(1) {
+  color: hsl(0, 100%, 67%);
+  background: hsla(0, 100%, 67%, 0.05);
+}
+.summary__item:nth-child(1) > div:first-child {
+  background-image: url("../assets/images/icon-reaction.svg");
+}
+.summary__item:nth-child(2) {
+  color: hsl(39, 100%, 56%);
+  background: hsla(39, 100%, 56%, 0.05);
+}
+.summary__item:nth-child(2) > div:first-child {
+  background-image: url("../assets/images/icon-memory.svg");
+}
+.summary__item:nth-child(3) {
+  color: hsl(166, 100%, 37%);
+  background: hsla(166, 100%, 37%, 0.05);
+}
+.summary__item:nth-child(3) > div:first-child {
+  background-image: url("../assets/images/icon-verbal.svg");
+}
+.summary__item:nth-child(4) {
+  color: hsl(234, 85%, 45%);
+  background: hsla(234, 85%, 45%, 0.05);
+}
+.summary__item:nth-child(4) > div:first-child {
+  background-image: url("../assets/images/icon-visual.svg");
+}
+.summary__item > div:first-child {
+  background-repeat: no-repeat;
+  background-position-y: center;
+  padding-left: 32px;
+  margin-left: 8px;
+}
+.summary__bttn {
+  position: relative;
+  width: 100%;
+  min-height: 3rem;
+  background-color: hsl(224, 30%, 27%);
+  padding: 16px;
+  margin-top: 1.5rem;
+  border-radius: 32px;
+  border: none;
+  overflow: hidden;
+}
+.summary__bttn-hover {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  opacity: 0;
+}
+.summary__bttn-title {
+  color: hsl(241, 100%, 89%);
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+.summary__bttn:hover {
+  cursor: pointer;
+}
+.summary__bttn:hover > div:first-child {
+  opacity: 1;
+}
 
-.item__left {
-  display: flex;
+.text-bold {
+  font-weight: 800;
+}
+
+.flex-header {
+  flex: 0 1 0;
+}
+.flex-main {
+  margin-top: 2rem;
+  flex: 1 0 0;
+}
+.flex-footer {
+  flex: 0 1 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 8px;
+}
+@media (min-width: 1280px) {
+  .attribution {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }/*# sourceMappingURL=main.css.map */
