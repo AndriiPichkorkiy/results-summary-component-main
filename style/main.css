@@ -36,8 +36,12 @@ body {
   margin: 0;
   height: 100%;
 }
+
+.card {
+  height: calc(100% - 64px);
+}
 @media (min-width: 1280px) {
-  body {
+  .card {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,6 +51,8 @@ body {
 .container {
   max-width: 375px;
   margin: 0 auto;
+  box-shadow: 2px 10px 25px 15px hsl(221, 100%, 96%);
+  border-radius: 32px;
 }
 @media (min-width: 1280px) {
   .container {
@@ -225,14 +231,7 @@ body {
   font-size: 11px;
   text-align: center;
   padding-bottom: 8px;
-}
-@media (min-width: 1280px) {
-  .attribution {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  display: block;
 }
 
 .attribution a {

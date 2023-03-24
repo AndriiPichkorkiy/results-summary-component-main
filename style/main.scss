@@ -43,7 +43,10 @@ body {
   padding: 0;
   margin: 0;
   height: 100%;
+}
 
+.card {
+  height: calc(100% - 64px);
   @include tablet {
     display: flex;
     align-items: center;
@@ -54,6 +57,9 @@ body {
 .container {
   max-width: 375px;
   margin: 0 auto;
+
+  box-shadow: 2px 10px 25px 15px $pale-blue;
+  border-radius: 32px;
 
   @include tablet {
     max-width: 730px;
@@ -260,13 +266,14 @@ body {
   font-size: 11px;
   text-align: center;
   padding-bottom: 8px;
+  display: block;
 
-  @include tablet {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  // @include tablet {
+  //   position: absolute;
+  //   bottom: 1rem;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  // }
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
